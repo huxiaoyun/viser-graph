@@ -1,0 +1,21 @@
+{
+  "name": "viser-graph",
+  "version": "0.1.0",
+  "description": "viser is a toolkit fit for data vis engineer.",
+  "bugs": {
+    "url": "https://github.com/viserjs/viser/issues"
+  },
+  "homepage": "https://github.com/viserjs/viser#readme",
+  "scripts": {
+    "bootstrap": "lerna bootstrap"
+  },
+  "devDependencies": {
+    "lerna": "^2.10.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:viserjs/viser.git"
+  },
+  "author": "DT-FE",
+  "license": "MIT"
+}
