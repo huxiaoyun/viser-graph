@@ -27,7 +27,8 @@
   "dependencies": {
     "prop-types": "^15.6.0",
     "@types/node": "*",
-    "@types/prop-types": "*"
+    "@types/prop-types": "*",
+    "@alife/viser-graph": "*"
   },
   "devDependencies": {
     "@types/react": "*",
@@ -56,5 +57,8 @@
     "chart",
     "react",
     "datavis"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  }
 }

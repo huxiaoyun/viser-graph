@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {viserGraph} from '../../../viser-graph/src';
+import {viserGraph} from '@alife/viser-graph';
 
 function firstLowerCase(str: string) {
   return str.replace(/^\S/, (s: any) => {

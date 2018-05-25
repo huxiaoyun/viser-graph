@@ -1,9 +1,16 @@
 {
+  "name": "@alife/viser-graph",
+  "version": "0.1.0",
+  "description": "viser is a toolkit fit for data vis engineer.",
   "devDependencies": {
     "lerna": "^2.10.1"
   },
   "dependencies": {
     "@ali/g6": "^2.0.0-beta.59",
+    "@ali/g6-editor": "^1.0.0-beta.65",
     "lodash": "^4.17.10"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
   }
 }
