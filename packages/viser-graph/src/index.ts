@@ -56,10 +56,9 @@ export class viserGraph {
   }
 
   setEvent() {
-    const eventConfig = {} as any;
     Object.keys(this.config.events || []).forEach((k) => {
       const eventName = k.replace('on', '').toLocaleLowerCase();
-      this.graph.on(eventName, (ev)=>{
+      this.graph.on(eventName, (ev: any)=>{
         this.config.events[k](ev, this.graph);
       });
     });

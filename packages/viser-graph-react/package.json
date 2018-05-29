@@ -1,5 +1,5 @@
 {
-  "name": "viser-graph-react",
+  "name": "@alife/viser-graph-react",
   "version": "0.0.1",
   "description": "viser-graph-react is react of viser-graph.",
   "repository": "viserjs/viser-graph-react",
@@ -15,9 +15,12 @@
   "module": "es/index.js",
   "types": "src/index.tsx",
   "scripts": {
-    "build": "node ./tools/build.js",
+    "build": "npm run build:ts && npm run build:cjs && npm run build:umd",
+    "build:ts": "rimraf es && tsc",
+    "build:cjs": "rimraf lib && NODE_ENV=commonjs BABEL_ENV=cjs babel ./es -d lib",
+    "build:umd": "rimraf umd && BABEL_ENV=umd webpack --config webpack.config.js",
     "clean": "git clean -fdX .",
-    "lint": "tslint src",
+    "lint": "tslint src/**/*",
     "analyse": "NODE_ENV=analyse webpack --progress --config webpack.config.js"
   },
   "peerDependencies": {
