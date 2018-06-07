@@ -1,4 +1,4 @@
-import { viserGraph, registerNode, registerEdge, registerGuide, Layouts } from '../../viser-graph/src';
+import { viserGraph, registerNode, registerEdge, registerGuide, Layouts } from 'viser-graph';
 import Vue, { ComponentOptions } from 'vue';
 import typedProps from './typed';
 import {oneObjectMoreArray, cleanUndefined, isAllUndefined, normalizeProps} from './utils';
