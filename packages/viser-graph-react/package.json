@@ -1,6 +1,6 @@
 {
-  "name": "@alife/viser-graph-react",
-  "version": "0.0.1",
+  "name": "viser-graph-react",
+  "version": "0.0.1-beta",
   "description": "viser-graph-react is react of viser-graph.",
   "repository": "viserjs/viser-graph-react",
   "license": "MIT",
@@ -28,10 +28,11 @@
     "react-dom": ">15"
   },
   "dependencies": {
-    "prop-types": "^15.6.0",
+    "viser-graph": "*",
     "@types/node": "*",
     "@types/prop-types": "*",
-    "@alife/viser-graph": "*"
+    "antd": "^3.6.1",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "@types/react": "*",
@@ -60,8 +61,5 @@
     "chart",
     "react",
     "datavis"
-  ],
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
-  }
+  ]
 }

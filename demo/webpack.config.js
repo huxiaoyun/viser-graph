@@ -14,13 +14,13 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.json', '.vue'],
     alias: {
-      viserGraph: path.resolve(__dirname, '../packages/viser-graph/src/index'),
-      // 'viser-react': path.resolve(__dirname, '../packages/viser-react/src/index'),
-      // 'viser-vue': path.resolve(__dirname, '../packages/viser-vue/src/index'),
-      // 'viser-ng': path.resolve(__dirname, '../packages/viser-ng/src/index'),
+      viser: path.resolve(__dirname, '../packages/viser/src/index'),
+      'viser-graph-react': path.resolve(__dirname, '../packages/viser-graph-react/src/index'),
+      'viser-graph-vue': path.resolve(__dirname, '../packages/viser-graph-vue/src/index'),
+      'viser-graph-ng': path.resolve(__dirname, '../packages/viser-graph-ng/src/index'),
       'vue$': 'vue/dist/vue.esm.js'
     },
-    modules: [path.resolve(__dirname, '../packages/viser-ng/node_modules'), 'node_modules']
+    modules: [path.resolve(__dirname, '../packages/viser-graph-ng/node_modules'), 'node_modules']
   },
   module: {
     loaders: [

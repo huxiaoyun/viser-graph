@@ -1,12 +1,11 @@
 {
   "name": "viser-demo",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "viser demo",
   "scripts": {
     "start": "UV_THREADPOOL_SIZE=100 && node --max_old_space_size=8192 run.js"
   },
   "dependencies": {
-    "@ali/g6-editor": "^1.0.0-beta.65",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/compiler-cli": "^4.0.0",

@@ -11,7 +11,7 @@ let config = {
   output: {
     path: path.resolve(__dirname, 'umd'),
     filename: 'viser-graph.min.js',
-    library: 'Viser',
+    library: 'ViserGraph',
     libraryTarget: 'umd',
   },
 

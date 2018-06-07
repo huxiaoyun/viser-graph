@@ -1,5 +1,4 @@
 import { viserGraph, registerNode } from '../../../packages/viser-graph/src';
-
 const data = {
   nodes: [{
     id: 'node1',
@@ -19,6 +18,7 @@ const data = {
 
 new viserGraph({
   graph: {
+    container: 'mount',
     width: 500,
     height: 500,
     fitView: 'cc',

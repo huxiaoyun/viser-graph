@@ -1,4 +1,4 @@
-import * as G6 from '@ali/g6';
+import * as G6 from '@antv/g6';
 
 export class viserGraph {
   config: any;

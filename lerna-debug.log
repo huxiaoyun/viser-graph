@@ -1,288 +1,98 @@
-0 silly input []
-1 silly flags { _: [ 'bootstrap' ],
+0 silly input [ 'publish' ]
+1 silly flags { _: [ 'publish' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   args: [] }
-2 verbose rootPath /Users/ludy.hxy/Project/g2/g6/viser-graph
-3 info version 2.11.0
-4 silly existsSync /Users/ludy.hxy/Project/g2/g6/viser-graph/VERSION
-5 silly initialize attempt
-6 silly npmConfig { registry: undefined,
-6 silly npmConfig   npmClient: undefined,
-6 silly npmConfig   npmClientArgs: undefined,
-6 silly npmConfig   mutex: undefined }
-7 silly initialize success
-8 silly execute attempt
-9 info Bootstrapping 2 packages
-10 info lifecycle preinstall
-11 silly runScript preinstall viser-graph-react
-12 silly viser-graph-react
-13 silly runScript preinstall undefined
-14 silly
-15 silly hasDependencyInstalled undefined 'lerna'
-16 silly dependencyIsSatisfied [ 'lerna',
-16 silly dependencyIsSatisfied   '^2.10.1',
-16 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/node_modules' ]
-17 verbose dependencyIsSatisfied lerna false
-18 silly hasDependencyInstalled viser-graph-react @types/react
-19 silly dependencyIsSatisfied [ '@types/react',
-19 silly dependencyIsSatisfied   '*',
-19 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-20 verbose dependencyIsSatisfied @types/react true
-21 silly hasDependencyInstalled viser-graph-react @types/react-dom
-22 silly dependencyIsSatisfied [ '@types/react-dom',
-22 silly dependencyIsSatisfied   '16.0.4',
-22 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-23 verbose dependencyIsSatisfied @types/react-dom true
-24 silly hasDependencyInstalled viser-graph-react babel-cli
-25 silly dependencyIsSatisfied [ 'babel-cli',
-25 silly dependencyIsSatisfied   '^6.26.0',
-25 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-26 verbose dependencyIsSatisfied babel-cli true
-27 silly hasDependencyInstalled viser-graph-react babel-loader
-28 silly dependencyIsSatisfied [ 'babel-loader',
-28 silly dependencyIsSatisfied   '^7.1.2',
-28 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-29 verbose dependencyIsSatisfied babel-loader true
-30 silly hasDependencyInstalled viser-graph-react babel-plugin-dev-expression
-31 silly dependencyIsSatisfied [ 'babel-plugin-dev-expression',
-31 silly dependencyIsSatisfied   '^0.2.1',
-31 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-32 verbose dependencyIsSatisfied babel-plugin-dev-expression true
-33 silly hasDependencyInstalled viser-graph-react babel-plugin-external-helpers
-34 silly dependencyIsSatisfied [ 'babel-plugin-external-helpers',
-34 silly dependencyIsSatisfied   '^6.22.0',
-34 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-35 verbose dependencyIsSatisfied babel-plugin-external-helpers true
-36 silly hasDependencyInstalled viser-graph-react babel-plugin-transform-react-remove-prop-types
-37 silly dependencyIsSatisfied [ 'babel-plugin-transform-react-remove-prop-types',
-37 silly dependencyIsSatisfied   '^0.4.10',
-37 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-38 verbose dependencyIsSatisfied babel-plugin-transform-react-remove-prop-types true
-39 silly hasDependencyInstalled viser-graph-react babel-preset-env
-40 silly dependencyIsSatisfied [ 'babel-preset-env',
-40 silly dependencyIsSatisfied   '^1.6.1',
-40 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-41 verbose dependencyIsSatisfied babel-preset-env true
-42 silly hasDependencyInstalled viser-graph-react colors
-43 silly dependencyIsSatisfied [ 'colors',
-43 silly dependencyIsSatisfied   '^1.1.2',
-43 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-44 verbose dependencyIsSatisfied colors true
-45 silly hasDependencyInstalled viser-graph-react gzip-size
-46 silly dependencyIsSatisfied [ 'gzip-size',
-46 silly dependencyIsSatisfied   '^4.0.0',
-46 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-47 verbose dependencyIsSatisfied gzip-size true
-48 silly hasDependencyInstalled viser-graph-react ora
-49 silly dependencyIsSatisfied [ 'ora',
-49 silly dependencyIsSatisfied   '^1.3.0',
-49 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-50 verbose dependencyIsSatisfied ora true
-51 silly hasDependencyInstalled viser-graph-react pretty-bytes
-52 silly dependencyIsSatisfied [ 'pretty-bytes',
-52 silly dependencyIsSatisfied   '^4.0.2',
-52 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-53 verbose dependencyIsSatisfied pretty-bytes true
-54 silly hasDependencyInstalled viser-graph-react react
-55 silly dependencyIsSatisfied [ 'react',
-55 silly dependencyIsSatisfied   '^16.0.0',
-55 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-56 verbose dependencyIsSatisfied react true
-57 silly hasDependencyInstalled viser-graph-react react-dom
-58 silly dependencyIsSatisfied [ 'react-dom',
-58 silly dependencyIsSatisfied   '^16.0.0',
-58 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-59 verbose dependencyIsSatisfied react-dom true
-60 silly hasDependencyInstalled viser-graph-react rimraf
-61 silly dependencyIsSatisfied [ 'rimraf',
-61 silly dependencyIsSatisfied   '^2.6.2',
-61 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-62 verbose dependencyIsSatisfied rimraf true
-63 silly hasDependencyInstalled viser-graph-react tslint
-64 silly dependencyIsSatisfied [ 'tslint',
-64 silly dependencyIsSatisfied   '^5.5.0',
-64 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-65 verbose dependencyIsSatisfied tslint true
-66 silly hasDependencyInstalled viser-graph-react typescript
-67 silly dependencyIsSatisfied [ 'typescript',
-67 silly dependencyIsSatisfied   '^2.6.1',
-67 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-68 verbose dependencyIsSatisfied typescript true
-69 silly hasDependencyInstalled viser-graph-react webpack
-70 silly dependencyIsSatisfied [ 'webpack',
-70 silly dependencyIsSatisfied   '^4.5.0',
-70 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-71 verbose dependencyIsSatisfied webpack true
-72 silly hasDependencyInstalled viser-graph-react webpack-bundle-analyzer
-73 silly dependencyIsSatisfied [ 'webpack-bundle-analyzer',
-73 silly dependencyIsSatisfied   '^2.11.0',
-73 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-74 verbose dependencyIsSatisfied webpack-bundle-analyzer true
-75 silly hasDependencyInstalled viser-graph-react webpack-cli
-76 silly dependencyIsSatisfied [ 'webpack-cli',
-76 silly dependencyIsSatisfied   '^2.0.14',
-76 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-77 verbose dependencyIsSatisfied webpack-cli true
-78 silly hasDependencyInstalled viser-graph-react prop-types
-79 silly dependencyIsSatisfied [ 'prop-types',
-79 silly dependencyIsSatisfied   '^15.6.0',
-79 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-80 verbose dependencyIsSatisfied prop-types true
-81 silly hasDependencyInstalled viser-graph-react @types/node
-82 silly dependencyIsSatisfied [ '@types/node',
-82 silly dependencyIsSatisfied   '*',
-82 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-83 verbose dependencyIsSatisfied @types/node true
-84 silly hasDependencyInstalled viser-graph-react @types/prop-types
-85 silly dependencyIsSatisfied [ '@types/prop-types',
-85 silly dependencyIsSatisfied   '*',
-85 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph-react/node_modules' ]
-86 verbose dependencyIsSatisfied @types/prop-types true
-87 silly hasDependencyInstalled undefined '@ali/g6'
-88 silly dependencyIsSatisfied [ '@ali/g6',
-88 silly dependencyIsSatisfied   '^2.0.0-beta.59',
-88 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/node_modules' ]
-89 verbose dependencyIsSatisfied @ali/g6 false
-90 silly hasDependencyInstalled undefined 'lodash'
-91 silly dependencyIsSatisfied [ 'lodash',
-91 silly dependencyIsSatisfied   '^4.17.10',
-91 silly dependencyIsSatisfied   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/node_modules' ]
-92 verbose dependencyIsSatisfied lodash false
-93 silly root dependencies []
-94 silly leaf dependencies {
-94 silly leaf dependencies   "undefined": [
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "lerna@^2.10.1",
-94 silly leaf dependencies       "isSatisfied": false
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "@ali/g6@^2.0.0-beta.59",
-94 silly leaf dependencies       "isSatisfied": false
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "lodash@^4.17.10",
-94 silly leaf dependencies       "isSatisfied": false
-94 silly leaf dependencies     }
-94 silly leaf dependencies   ],
-94 silly leaf dependencies   "viser-graph-react": [
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "@types/react@*",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "@types/react-dom@16.0.4",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-cli@^6.26.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-loader@^7.1.2",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-plugin-dev-expression@^0.2.1",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-plugin-external-helpers@^6.22.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-plugin-transform-react-remove-prop-types@^0.4.10",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "babel-preset-env@^1.6.1",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "colors@^1.1.2",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "gzip-size@^4.0.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "ora@^1.3.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "pretty-bytes@^4.0.2",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "react@^16.0.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "react-dom@^16.0.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "rimraf@^2.6.2",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "tslint@^5.5.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "typescript@^2.6.1",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "webpack@^4.5.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "webpack-bundle-analyzer@^2.11.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "webpack-cli@^2.0.14",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "prop-types@^15.6.0",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "@types/node@*",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     },
-94 silly leaf dependencies     {
-94 silly leaf dependencies       "dependency": "@types/prop-types@*",
-94 silly leaf dependencies       "isSatisfied": true
-94 silly leaf dependencies     }
-94 silly leaf dependencies   ]
-94 silly leaf dependencies }
-95 info Installing external dependencies
-96 verbose actions 1 actions, concurrency 4
-97 silly installInDir viser-graph [ 'lerna@^2.10.1', '@ali/g6@^2.0.0-beta.59', 'lodash@^4.17.10' ]
-98 silly installInDir backup /Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json
-99 silly rename [ '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json',
-99 silly rename   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json.lerna_backup' ]
-100 silly installInDir writing tempJson { dependencies:
-100 silly installInDir    { lerna: '^2.10.1',
-100 silly installInDir      '@ali/g6': '^2.0.0-beta.59',
-100 silly installInDir      lodash: '^4.17.10' } }
-101 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph' }
-102 silly installInDir [ 'npm', [ 'install' ] ]
-103 silly installInDir cleanup /Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json
-104 silly renameSync [ '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json.lerna_backup',
-104 silly renameSync   '/Users/ludy.hxy/Project/g2/g6/viser-graph/packages/viser-graph/package.json' ]
-105 verbose installed leaf undefined
-106 error execute callback with error
-107 error Error: Command failed: npm install
-107 error npm ERR! code E404
-107 error npm ERR! 404 Not Found: @ali/g6@^2.0.0-beta.59
-107 error
-107 error npm ERR! A complete log of this run can be found in:
-107 error npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-05-14T06_23_49_247Z-debug.log
-107 error
-107 error     at Promise.all.then.arr (/Users/ludy.hxy/Project/g2/g6/viser-graph/node_modules/execa/index.js:236:11)
-107 error     at <anonymous>
+1 silly flags   scope: 'viser-graph' }
+2 verbose rootPath /Users/ludy.hxy/Project/g2/g6/github/viser-graph
+3 info version 2.10.1
+4 silly isInitialized
+5 silly isInitialized true
+6 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/VERSION
+7 info scope viser-graph
+8 silly initialize attempt
+9 info current version 0.0.1-beta
+10 silly isDetachedHead
+11 silly getCurrentBranch
+12 verbose getCurrentBranch master
+13 verbose isDetachedHead false
+14 silly getCurrentBranch
+15 verbose getCurrentBranch master
+16 silly getUpdates
+17 info Checking for updated packages...
+18 silly hasTags
+19 verbose hasTags true
+20 silly getLastTag
+21 verbose getLastTag v0.0.1-beta
+22 info Comparing with v0.0.1-beta.
+23 silly diffSinceIn v0.0.1-beta packages/viser-graph
+24 silly diff packages/viser-graph/package-lock.json
+24 silly diff packages/viser-graph/src/index.ts
+24 silly diff packages/viser-graph/webpack.config.js
+25 verbose updated viser-graph
+26 info Checking for prereleased packages...
+27 verbose prereleased viser-graph
+28 silly collectDependents
+29 silly isPackageDependentOf viser-graph viser-graph
+30 silly collectUpdates
+31 verbose has filtered update viser-graph
+32 silly initialize success
+33 silly execute attempt
+34 silly addFile /Users/ludy.hxy/Project/g2/g6/github/viser-graph/lerna.json
+35 silly runScriptSync preversion viser-graph
+36 silly runScriptSync preversion viser-graph
+37 silly runScriptSync version viser-graph
+38 silly runScriptSync version viser-graph
+39 silly addFile /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/package.json
+40 silly commit v0.0.1
+41 verbose commit [ 'commit', '--no-verify', '-m', 'v0.0.1' ]
+42 silly addTag v0.0.1
+43 silly runScriptSync postversion viser-graph
+44 silly runScriptSync postversion viser-graph
+45 info publish Publishing packages to npm...
+46 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
+47 verbose execScript No prepublish script found at /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
+48 verbose publishing viser-graph
+49 silly publishTaggedInDir latest viser-graph
+50 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+51 error publish Retrying failed publish: viser-graph
+52 verbose publish error undefined
+53 verbose publishing viser-graph
+54 silly publishTaggedInDir latest viser-graph
+55 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+56 error publish Retrying failed publish: viser-graph
+57 verbose publish error undefined
+58 verbose publishing viser-graph
+59 silly publishTaggedInDir latest viser-graph
+60 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+61 error publish Retrying failed publish: viser-graph
+62 verbose publish error undefined
+63 verbose publishing viser-graph
+64 silly publishTaggedInDir latest viser-graph
+65 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+66 error publish Retrying failed publish: viser-graph
+67 verbose publish error undefined
+68 verbose publishing viser-graph
+69 silly publishTaggedInDir latest viser-graph
+70 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+71 error publish Ran out of retries while publishing viser-graph Error: Command failed: npm publish --tag latest
+71 error publish npm ERR! publish Failed PUT 403
+71 error publish npm ERR! code E403
+71 error publish npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
+71 error publish
+71 error publish npm ERR! A complete log of this run can be found in:
+71 error publish npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_03_39_211Z-debug.log
+71 error publish
+71 error publish     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+71 error publish     at <anonymous>
+71 error publish     at process._tickCallback (internal/process/next_tick.js:188:7)
+72 error execute callback with error
+73 error Error: Command failed: npm publish --tag latest
+73 error npm ERR! publish Failed PUT 403
+73 error npm ERR! code E403
+73 error npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
+73 error
+73 error npm ERR! A complete log of this run can be found in:
+73 error npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_03_39_211Z-debug.log
+73 error
+73 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+73 error     at <anonymous>

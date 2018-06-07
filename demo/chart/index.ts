@@ -4,7 +4,4 @@ export const list = [{
 },{
   type: 'tree',
   case: ['json', 'react', 'angular', 'vue']
-},{
-  type: 'edit',
-  case: ['json', 'react', 'angular', 'vue']
 }];

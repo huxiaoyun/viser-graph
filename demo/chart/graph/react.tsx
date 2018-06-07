@@ -1,20 +1,20 @@
-import { Graph, Zoom } from '../../../packages/viser-graph-react/src/index';
+import { Graph, Zoom } from '../../../packages/viser-graph-react/src';
 import * as React from 'react';
 
 const data = {
-  roots: [{
-    label: 'root',
-    id:1,
-    children: [{
-      label: 'child1',
-      children: [
-        {
-          label: 'child\n1.1'
-        }
-      ]
-    }, {
-      label: 'child2'
-    }]
+  nodes: [{
+    id: 'node1',
+    x: 100,
+    y: 200
+  },{
+    id: 'node2',
+    x: 300,
+    y: 200
+  }],
+  edges: [{
+    id: 'edge1',
+    target: 'node2',
+    source: 'node1'
   }]
 };
 

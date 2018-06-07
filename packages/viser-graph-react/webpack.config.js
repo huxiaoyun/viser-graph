@@ -10,8 +10,8 @@ let config = {
 
   output: {
     path: path.resolve(__dirname, 'umd'),
-    filename: 'viser-react.min.js',
-    library: 'ViserReact',
+    filename: 'viser-graph-react.min.js',
+    library: 'ViserGraphReact',
     libraryTarget: 'umd',
   },
 
