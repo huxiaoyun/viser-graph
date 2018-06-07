@@ -2,7 +2,12 @@
 1 silly flags { _: [ 'publish' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   scope: 'viser-graph' }
+1 silly flags   yes: true,
+1 silly flags   canary: 'beta',
+1 silly flags   c: 'beta',
+1 silly flags   scope: 'viser-graph',
+1 silly flags   'cd-version': 'prerelease',
+1 silly flags   cdVersion: 'prerelease' }
 2 verbose rootPath /Users/ludy.hxy/Project/g2/g6/github/viser-graph
 3 info version 2.10.1
 4 silly isInitialized
@@ -10,89 +15,77 @@
 6 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/VERSION
 7 info scope viser-graph
 8 silly initialize attempt
-9 info current version 0.0.1-beta
-10 silly isDetachedHead
-11 silly getCurrentBranch
-12 verbose getCurrentBranch master
-13 verbose isDetachedHead false
-14 silly getCurrentBranch
-15 verbose getCurrentBranch master
-16 silly getUpdates
-17 info Checking for updated packages...
-18 silly hasTags
-19 verbose hasTags true
-20 silly getLastTag
-21 verbose getLastTag v0.0.1-beta
-22 info Comparing with v0.0.1-beta.
-23 silly diffSinceIn v0.0.1-beta packages/viser-graph
-24 silly diff packages/viser-graph/package-lock.json
-24 silly diff packages/viser-graph/src/index.ts
-24 silly diff packages/viser-graph/webpack.config.js
-25 verbose updated viser-graph
-26 info Checking for prereleased packages...
-27 verbose prereleased viser-graph
-28 silly collectDependents
-29 silly isPackageDependentOf viser-graph viser-graph
-30 silly collectUpdates
-31 verbose has filtered update viser-graph
-32 silly initialize success
-33 silly execute attempt
-34 silly addFile /Users/ludy.hxy/Project/g2/g6/github/viser-graph/lerna.json
-35 silly runScriptSync preversion viser-graph
-36 silly runScriptSync preversion viser-graph
-37 silly runScriptSync version viser-graph
-38 silly runScriptSync version viser-graph
-39 silly addFile /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/package.json
-40 silly commit v0.0.1
-41 verbose commit [ 'commit', '--no-verify', '-m', 'v0.0.1' ]
-42 silly addTag v0.0.1
-43 silly runScriptSync postversion viser-graph
-44 silly runScriptSync postversion viser-graph
-45 info publish Publishing packages to npm...
-46 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
-47 verbose execScript No prepublish script found at /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
+9 info canary enabled
+10 info current version 0.0.2
+11 silly getUpdates
+12 info Checking for updated packages...
+13 silly hasTags
+14 verbose hasTags true
+15 silly getCurrentSHA
+16 verbose getCurrentSHA a213af5caaeacd60b5a0c34da55aa0613dc56389
+17 info Comparing with a213af5c^..a213af5c.
+18 silly diffSinceIn a213af5c^..a213af5c packages/viser-graph
+19 silly diff packages/viser-graph/package.json
+20 verbose updated viser-graph
+21 info Checking for prereleased packages...
+22 silly collectDependents
+23 silly isPackageDependentOf viser-graph viser-graph
+24 silly collectUpdates
+25 verbose has filtered update viser-graph
+26 silly getCurrentSHA
+27 verbose getCurrentSHA a213af5caaeacd60b5a0c34da55aa0613dc56389
+28 info auto-confirmed
+29 silly initialize success
+30 silly execute attempt
+31 silly runScriptSync preversion viser-graph
+32 silly runScriptSync preversion viser-graph
+33 silly runScriptSync version viser-graph
+34 silly runScriptSync version viser-graph
+35 info publish Publishing packages to npm...
+36 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
+37 verbose execScript No prepublish script found at /Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph/scripts/prepublish.js
+38 verbose publishing viser-graph
+39 silly publishTaggedInDir canary viser-graph
+40 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+41 error publish Retrying failed publish: viser-graph
+42 verbose publish error undefined
+43 verbose publishing viser-graph
+44 silly publishTaggedInDir canary viser-graph
+45 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
+46 error publish Retrying failed publish: viser-graph
+47 verbose publish error undefined
 48 verbose publishing viser-graph
-49 silly publishTaggedInDir latest viser-graph
+49 silly publishTaggedInDir canary viser-graph
 50 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
 51 error publish Retrying failed publish: viser-graph
 52 verbose publish error undefined
 53 verbose publishing viser-graph
-54 silly publishTaggedInDir latest viser-graph
+54 silly publishTaggedInDir canary viser-graph
 55 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
 56 error publish Retrying failed publish: viser-graph
 57 verbose publish error undefined
 58 verbose publishing viser-graph
-59 silly publishTaggedInDir latest viser-graph
+59 silly publishTaggedInDir canary viser-graph
 60 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
-61 error publish Retrying failed publish: viser-graph
-62 verbose publish error undefined
-63 verbose publishing viser-graph
-64 silly publishTaggedInDir latest viser-graph
-65 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
-66 error publish Retrying failed publish: viser-graph
-67 verbose publish error undefined
-68 verbose publishing viser-graph
-69 silly publishTaggedInDir latest viser-graph
-70 silly getExecOpts { cwd: '/Users/ludy.hxy/Project/g2/g6/github/viser-graph/packages/viser-graph' }
-71 error publish Ran out of retries while publishing viser-graph Error: Command failed: npm publish --tag latest
-71 error publish npm ERR! publish Failed PUT 403
-71 error publish npm ERR! code E403
-71 error publish npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
-71 error publish
-71 error publish npm ERR! A complete log of this run can be found in:
-71 error publish npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_03_39_211Z-debug.log
-71 error publish
-71 error publish     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-71 error publish     at <anonymous>
-71 error publish     at process._tickCallback (internal/process/next_tick.js:188:7)
-72 error execute callback with error
-73 error Error: Command failed: npm publish --tag latest
-73 error npm ERR! publish Failed PUT 403
-73 error npm ERR! code E403
-73 error npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
-73 error
-73 error npm ERR! A complete log of this run can be found in:
-73 error npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_03_39_211Z-debug.log
-73 error
-73 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
-73 error     at <anonymous>
+61 error publish Ran out of retries while publishing viser-graph Error: Command failed: npm publish --tag canary
+61 error publish npm ERR! publish Failed PUT 403
+61 error publish npm ERR! code E403
+61 error publish npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
+61 error publish
+61 error publish npm ERR! A complete log of this run can be found in:
+61 error publish npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_26_42_660Z-debug.log
+61 error publish
+61 error publish     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+61 error publish     at <anonymous>
+61 error publish     at process._tickCallback (internal/process/next_tick.js:188:7)
+62 error execute callback with error
+63 error Error: Command failed: npm publish --tag canary
+63 error npm ERR! publish Failed PUT 403
+63 error npm ERR! code E403
+63 error npm ERR! you must verify your email before publishing a new package: https://www.npmjs.com/email-edit : viser-graph
+63 error
+63 error npm ERR! A complete log of this run can be found in:
+63 error npm ERR!     /Users/ludy.hxy/.npm/_logs/2018-06-07T03_26_42_660Z-debug.log
+63 error
+63 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+63 error     at <anonymous>

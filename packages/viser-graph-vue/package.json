@@ -1,6 +1,6 @@
 {
   "name": "viser-graph-vue",
-  "version": "0.0.1-beta",
+  "version": "0.0.3-0-beta.a213af5c",
   "description": "viser-graph-vue is vue of viser.",
   "repository": "viserjs/viser-graph-vue",
   "license": "MIT",
@@ -27,9 +27,9 @@
     "vue": ">=1"
   },
   "dependencies": {
-    "vue": "^2.5.3",
     "@types/node": "*",
-    "viser-graph": "*"
+    "viser-graph": "^0.0.3-0-beta.a213af5c",
+    "vue": "^2.5.3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",

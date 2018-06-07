@@ -1,6 +1,6 @@
 {
   "name": "viser-graph-ng",
-  "version": "0.0.1-beta",
+  "version": "0.0.3-0-beta.a213af5c",
   "description": "viser-graph-ng is angular of viser.",
   "repository": "viserjs/viser-graph-ng",
   "license": "MIT",
@@ -24,16 +24,16 @@
     "analyse": "cross-env NODE_ENV=analyse webpack --progress --config webpack.config.js"
   },
   "peerDependencies": {
-    "@angular/core": "^2.4.0",
     "@angular/common": "^2.4.0",
+    "@angular/core": "^2.4.0",
     "reflect-metadata": "^0.1.8",
     "rxjs": "^5.0.3",
     "zone.js": "^0.7.2"
   },
   "dependencies": {
-    "viser-graph": "*",
     "@types/core-js": "*",
-    "@types/node": "*"
+    "@types/node": "*",
+    "viser-graph": "^0.0.3-0-beta.a213af5c"
   },
   "devDependencies": {
     "@angular/common": "^5.2.1",

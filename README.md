@@ -91,7 +91,7 @@ Then you can find the library on window.ViserReact.
 To examine the demos in your local build, open to `demo` directory, and execute
 
 ```shell
-$ git clone https://github.com/viserjs/viser.git
+$ git clone https://github.com/huxiaoyun/viser-graph.git
 $ npm run bootstrap
 $ cd ./demo && npm install
 $ npm run start
@@ -101,6 +101,6 @@ and then browse to http://localhost:3000
 
 ## License
 
-[MIT](https://github.com/viserjs/viser/blob/master/LICENSE)
+[MIT]()
 
 Copyright (c) 2017 DT-FE
