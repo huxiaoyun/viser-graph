@@ -1,6 +1,6 @@
 {
   "name": "viser-graph-react",
-  "version": "0.0.3-0-beta.a213af5c",
+  "version": "0.0.3-6",
   "description": "viser-graph-react is react of viser-graph.",
   "repository": "viserjs/viser-graph-react",
   "license": "MIT",
@@ -32,7 +32,7 @@
     "@types/prop-types": "*",
     "antd": "^3.6.1",
     "prop-types": "^15.6.0",
-    "viser-graph": "^0.0.3-0-beta.a213af5c"
+    "viser-graph": "0.0.3-5"
   },
   "devDependencies": {
     "@types/react": "*",

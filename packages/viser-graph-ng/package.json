@@ -1,6 +1,6 @@
 {
   "name": "viser-graph-ng",
-  "version": "0.0.3-0-beta.a213af5c",
+  "version": "0.0.3-6",
   "description": "viser-graph-ng is angular of viser.",
   "repository": "viserjs/viser-graph-ng",
   "license": "MIT",
@@ -33,7 +33,7 @@
   "dependencies": {
     "@types/core-js": "*",
     "@types/node": "*",
-    "viser-graph": "^0.0.3-0-beta.a213af5c"
+    "viser-graph": "0.0.3-5"
   },
   "devDependencies": {
     "@angular/common": "^5.2.1",
