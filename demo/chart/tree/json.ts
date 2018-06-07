@@ -1,4 +1,4 @@
-import { viserGraph, registerNode } from '../../../packages/viser-graph';
+import { viserGraph, registerNode } from '../../../packages/viser-graph/src';
 
 const data = {
   roots: [{
