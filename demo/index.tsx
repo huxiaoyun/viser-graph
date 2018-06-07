@@ -1,7 +1,7 @@
 import { list } from './chart/index';
 
 import Vue from 'vue';
-import ViserGraphVue from '../packages/viser-graph-vue/src';
+import ViserGraphVue from 'viser-graph-vue';
 
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';

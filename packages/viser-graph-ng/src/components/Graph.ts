@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input,
   OnChanges, SimpleChanges, ViewChild, ViewContainerRef } from '@angular/core';
-import {viserGraph} from '@alife/viser-graph';
+import {viserGraph} from 'viser-graph';
 import { GraphContext } from './GraphService';
 import {generateRandomNum, retain} from './utils';
 

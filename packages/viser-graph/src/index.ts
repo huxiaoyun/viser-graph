@@ -4,7 +4,6 @@ export class viserGraph {
   config: any;
   graph: any;
   constructor (config: any) {
-    console.log('viserGraph', config);
     this.config = config;
   }
 
@@ -68,4 +67,3 @@ export class viserGraph {
 export const registerNode = G6.registerNode;
 export const registerEdge = G6.registerEdge;
 export const registerGuide = G6.registerGuide;
-

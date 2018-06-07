@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { enableProdMode, NgModule } from '@angular/core';
-import {viserGraph} from '../../viser-graph/src';
+import {viserGraph} from 'viser-graph';
 import { Graph, Zoom } from './components/index';
 
 @NgModule({
