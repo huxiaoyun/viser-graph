@@ -1,6 +1,6 @@
 {
-  "name": "@alife/viser-graph",
-  "version": "0.1.0",
+  "name": "viser-graph",
+  "version": "0.0.1-beta",
   "description": "viser is a toolkit fit for data vis engineer.",
   "license": "MIT",
   "authors": "DT-FE",
@@ -27,12 +27,11 @@
     "react-dom": ">15"
   },
   "dependencies": {
-    "prop-types": "^15.6.0",
+    "@antv/g6": "^2.0.0",
     "@types/node": "*",
     "@types/prop-types": "*",
-    "@ali/g6": "^2.0.0-beta.59",
-    "@ali/g6-editor": "^1.0.0-beta.65",
-    "lodash": "^4.17.10"
+    "lodash": "^4.17.10",
+    "prop-types": "^15.6.0"
   },
   "devDependencies": {
     "@types/react": "*",
@@ -61,8 +60,5 @@
     "chart",
     "react",
     "datavis"
-  ],
-  "publishConfig": {
-    "registry": "http://registry.npm.alibaba-inc.com"
-  }
+  ]
 }
