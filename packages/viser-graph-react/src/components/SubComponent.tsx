@@ -31,3 +31,5 @@ class SubComponent<T = {}> extends React.Component<Props & T, any> {
 }
 
 export class Zoom extends SubComponent<any> { displayName = 'Zoom'; }
+export class Node extends SubComponent<any> { displayName = 'Node'; }
+export class Edge extends SubComponent<any> { displayName = 'Edge'; }

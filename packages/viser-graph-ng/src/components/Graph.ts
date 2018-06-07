@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input,
   OnChanges, SimpleChanges, ViewChild, ViewContainerRef } from '@angular/core';
-import {viserGraph} from 'viser-graph';
+import {viserGraph} from '../../../viser-graph/src';
 import { GraphContext } from './GraphService';
 import {generateRandomNum, retain} from './utils';
 
@@ -18,7 +18,9 @@ export class Graph implements AfterViewInit, OnChanges {
   @Input() public fitView?: boolean;
   @Input() public fitViewPadding?: any;
   @Input() public type?: any;
+  @Input() public layout?: any;
   @Input() public onClick?: any;
+  @Input() public onAfterchange?: any;
 
   @ViewChild('GraphDom') public graphDiv?: any;
   private componentId = generateRandomNum();
@@ -61,10 +63,20 @@ export class Graph implements AfterViewInit, OnChanges {
   private combineGraphConfig(props: any, config: any) {
     const GraphRetain = [
       'height', 'width', 'fitView', 'fitViewPadding',
-      'animate', 'type', 'data',
-      'onClick',
+      'animate', 'type', 'data', 'layout',
     ];
     config.graph = retain(props, GraphRetain);
+
+    const eventRetain = [
+      'onMouseDown', 'onMouseMove', 'onMouseUp',
+      'onClick', 'onDbClick',
+      'onTouchStart', 'onTouchMove', 'onTouchEnd',
+      'onPlotEnter', 'onPlotMove', 'onPlotLeave',
+      'onPlotClick', 'onPlotDbClick',
+      'onAfterchange',
+    ];
+
+    config.events = retain(props, eventRetain);
   }
 
   private convertValueToNum(props: any) {

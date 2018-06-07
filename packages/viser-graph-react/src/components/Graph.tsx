@@ -1,6 +1,6 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {viserGraph} from 'viser-graph';
+import {viserGraph} from '../../../viser-graph/src';
 
 function firstLowerCase(str: string) {
   return str.replace(/^\S/, (s: any) => {
@@ -57,7 +57,7 @@ export default class Graph extends React.Component<any, any> {
   combineChartConfig(props: any) {
     const chartRetain = [
       'height', 'width', 'animate',
-      'fitView', 'fitViewPadding', 'type',
+      'fitView', 'fitViewPadding', 'type', 'layout'
     ];
     this.config.graph = retain(props, chartRetain);
 
@@ -66,7 +66,8 @@ export default class Graph extends React.Component<any, any> {
       'onClick', 'onDbClick',
       'onTouchStart', 'onTouchMove', 'onTouchEnd',
       'onPlotEnter', 'onPlotMove', 'onPlotLeave',
-      'onPlotClick', 'onPlotDbClick'
+      'onPlotClick', 'onPlotDbClick',
+      'onAfterchange',
     ];
 
     this.config.events = retain(props, eventRetain);
@@ -78,8 +79,9 @@ export default class Graph extends React.Component<any, any> {
 
     const regSeries = [
       'zoom',
+      'node',
+      'edge',
     ];
-
     if (regSeries.indexOf(realName) < 0 && isOwnEmpty(props)) {
       config[nameLowerCase] = true;
     } else {
@@ -105,7 +107,6 @@ export default class Graph extends React.Component<any, any> {
     this.combineChartConfig(this.props);
 
     this.config.graph.container = this.container;
-    console.log('createChartInstance', this.config);
     this.chart = new viserGraph(this.config).render();
   }
 

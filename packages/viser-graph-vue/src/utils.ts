@@ -90,13 +90,13 @@ export const normalizeProps = function (props: any, include: string[] = [], excl
     delete newProps.vStyle;
   }
 
-  if (exclude !== null) {
+  if (exclude.length) {
     exclude.forEach(propsKey => {
       delete newProps[propsKey];
     })
   }
 
-  if (include !== null) {
+  if (include.length) {
     Object.keys(newProps).forEach(propsKey => {
       if (include.indexOf(propsKey) === -1) {
         delete newProps[propsKey];

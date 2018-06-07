@@ -1,17 +1,21 @@
 import { CommonModule } from '@angular/common';
 import { enableProdMode, NgModule } from '@angular/core';
-import {viserGraph} from 'viser-graph';
-import { Graph, Zoom } from './components/index';
+import {registerNode, registerEdge, registerGuide, Layouts} from '../../viser-graph/src';
+import { Graph, Zoom, Node, Edge } from './components/index';
 
 @NgModule({
   imports: [CommonModule],
   declarations: [
     Graph,
     Zoom,
+    Node,
+    Edge,
   ],
   exports: [
     Graph,
     Zoom,
+    Node,
+    Edge,
   ],
 })
 
@@ -19,6 +23,7 @@ export class ViserGraphModule {
 }
 
 enableProdMode();
-export const registerAnimation = viserGraph.registerAnimation;
-export const registerShape = viserGraph.registerShape;
-export const Global = viserGraph.Global;
+
+export {
+  registerNode, registerEdge, registerGuide, Layouts
+}

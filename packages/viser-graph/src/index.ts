@@ -5,12 +5,16 @@ export class viserGraph {
   graph: any;
   constructor (config: any) {
     this.config = config;
+    console.log(config);
   }
 
   render() {
     this.setGraph();
-    this.setData();
+    this.setNode();
+    this.setEdge();
     this.setEvent();
+
+    this.setData();
   };
 
   setGraph() {
@@ -54,6 +58,27 @@ export class viserGraph {
     this.graph.read(this.config.data);
   }
 
+  setNode() {
+    if (!this.config.node) {
+      return;
+    }
+    delete this.config.node.componentId;
+    const nodes = this.graph.node(this.config.node);
+    if (this.config.node.label) {
+      nodes.label(function(obj) {
+        return obj.name;
+      });
+    }
+  }
+
+  setEdge() {
+    if (!this.config.edge) {
+      return;
+    }
+    delete this.config.edge.componentId;
+    this.graph.edge(this.config.edge);
+  }
+
   setEvent() {
     Object.keys(this.config.events || []).forEach((k) => {
       const eventName = k.replace('on', '').toLocaleLowerCase();
@@ -67,3 +92,4 @@ export class viserGraph {
 export const registerNode = G6.registerNode;
 export const registerEdge = G6.registerEdge;
 export const registerGuide = G6.registerGuide;
+export const Layouts = G6.Layouts;

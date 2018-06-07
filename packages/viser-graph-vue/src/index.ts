@@ -1,12 +1,11 @@
-import {viserGraph} from 'viser-graph';
+import { viserGraph, registerNode, registerEdge, registerGuide, Layouts } from '../../viser-graph/src';
 import Vue, { ComponentOptions } from 'vue';
 import typedProps from './typed';
 import {oneObjectMoreArray, cleanUndefined, isAllUndefined, normalizeProps} from './utils';
 
 const rootCharts = ['v-graph'];
 
-const rootChartProps = ['data', 'width', 'height', 'container', 'fitView', 'fitViewPadding', 'animate', 'type'];
-
+const rootChartProps = ['data', 'width', 'height', 'container', 'fitView', 'fitViewPadding', 'animate', 'type', 'layout'];
 
 const baseChartComponent = {
   data() {
@@ -70,7 +69,6 @@ const baseChartComponent = {
         }
 
         const rechartName = this.$options._componentTag.replace(/-/g, '').slice(1);
-
         if (isAllUndefined(this._props)) {
           nearestRootComponent.jsonForD2[rechartName] = true;
         } else {
@@ -107,12 +105,18 @@ export default {
   install: (Vue: any, options: any) => {
     Vue.component('v-graph', baseChartComponent);
     Vue.component('v-zoom', baseChartComponent);
-  }
+    Vue.component('v-node', baseChartComponent);
+    Vue.component('v-edge', baseChartComponent);
+  },
 };
 
-// export const registerNode = viserGraph.registerNode;
-// export const registerEdge = viserGraph.registerEdge;
-// export const registerGuide = viserGraph.registerGuide;
+export {
+  registerNode,
+  registerEdge,
+  registerGuide,
+  Layouts
+};
+
 
 declare module 'vue/types/vue' {
   interface Vue {
