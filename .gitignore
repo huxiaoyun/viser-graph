@@ -9,3 +9,4 @@ demo/**/*/umd
 coverage
 npm-debug.log
 *.orig
+package-lock.json

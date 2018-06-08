@@ -11,5 +11,5 @@ export {
   registerNode,
   registerEdge,
   registerGuide,
-  Layouts
+  Layouts,
 };

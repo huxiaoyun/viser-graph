@@ -1,11 +1,11 @@
 export const list = [
-//   {
-//   type: 'graph',
-//   case: ['json', 'react', 'angular', 'vue']
-// },{
-//   type: 'tree',
-//   case: ['json', 'react', 'angular', 'vue']
-// },
+{
+  type: 'graph',
+  case: ['json', 'react', 'angular', 'vue']
+},{
+  type: 'tree',
+  case: ['json', 'react', 'angular', 'vue']
+},
 {
   type: 'compactBoxTree',
   case: ['json', 'react', 'angular', 'vue']

@@ -1,4 +1,4 @@
-import { Graph, Zoom } from 'viser-graph-react';
+import { Graph, Zoom } from '../../../packages/viser-graph-react';
 import * as React from 'react';
 
 const data = {
