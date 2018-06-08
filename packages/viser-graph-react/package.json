@@ -31,7 +31,7 @@
     "@types/node": "*",
     "@types/prop-types": "*",
     "prop-types": "^15.6.0",
-    "viser-graph": "*",
+    "viser-graph": "*"
   },
   "devDependencies": {
     "@types/react": "^16.3.16",

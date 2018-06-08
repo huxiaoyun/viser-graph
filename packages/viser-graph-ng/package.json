@@ -33,7 +33,7 @@
   "dependencies": {
     "@types/core-js": "*",
     "@types/node": "*",
-    "viser-graph": "*",
+    "viser-graph": "*"
   },
   "devDependencies": {
     "@angular/common": "^5.2.1",
