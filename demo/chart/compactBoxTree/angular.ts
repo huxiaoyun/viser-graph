@@ -2,7 +2,7 @@ import 'zone.js';
 import 'reflect-metadata';
 import { Component, enableProdMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ViserGraphModule, registerNode, registerEdge, Layouts } from '../../../packages/viser-graph-ng/src';
+import { ViserGraphModule, registerNode, registerEdge, Layouts } from 'viser-graph-ng';
 import {data} from './data'
 
 registerNode('treeNode', {

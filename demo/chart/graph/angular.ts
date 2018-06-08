@@ -2,7 +2,7 @@ import 'zone.js';
 import 'reflect-metadata';
 import { Component, enableProdMode, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ViserGraphModule } from '../../../packages/viser-graph-ng/src';
+import { ViserGraphModule } from 'viser-graph-ng';
 const data = {
   nodes: [{
     id: 'node1',

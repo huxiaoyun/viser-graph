@@ -14,7 +14,7 @@
 
 <script>
 import {data} from './data'
-import { registerNode, registerEdge, Layouts } from '../../../packages/viser-graph-vue/src';
+import { registerNode, registerEdge, Layouts } from 'viser-graph-vue';
 
 registerNode('treeNode', {
   anchor: [[0, 0.5], [1, 0.5]]

@@ -1,4 +1,4 @@
-import { Graph, Node, Edge, registerNode, registerEdge, Layouts } from '../../../packages/viser-graph-react/src';
+import { Graph, Node, Edge, registerNode, registerEdge, Layouts } from 'viser-graph-react';
 import * as React from 'react';
 import {data} from './data'
 
