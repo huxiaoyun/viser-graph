@@ -1,6 +1,6 @@
 import { default as Graph } from './components/Graph';
 import { Zoom, Node, Edge } from './components/SubComponent';
-import { registerNode, registerEdge, registerGuide, Layouts } from 'viser-graph';
+import { registerNode, registerEdge, registerGuide, Layouts, Util } from '../../viser-graph/src';
 
 export {
   Graph,
@@ -12,4 +12,5 @@ export {
   registerEdge,
   registerGuide,
   Layouts,
+  Util,
 };

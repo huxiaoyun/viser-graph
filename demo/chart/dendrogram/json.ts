@@ -4,7 +4,6 @@ import { data } from './data';
 registerNode('treeNode', {
   anchor: [[0, 0.5], [1, 0.5]]
 });
-
 registerEdge('smooth', {
   getPath: function getPath(item) {
     var points = item.getPoints();
@@ -18,17 +17,16 @@ registerEdge('smooth', {
   }
 });
 
-var layout = new Layouts.CompactBoxTree({
-  // direction: 'LR', // 方向（LR/RL/H/TB/BT/V）
-  getHGap: function getHGap() /* d */ {
-    // 横向间距
-    return 100;
-  },
-  getVGap: function getVGap() /* d */ {
-    // 竖向间距
-    return 10;
-  }
-});
+// 准备布局配置
+var layoutCfg = {
+  "direction": "LR",
+  "nodeSize": 20,
+  "rankSep": 400
+};
+// 自定义树节点
+var DEFAULT_NODE_SIZE = layoutCfg.nodeSize;
+// 生成树图实例
+var layout = new Layouts.Dendrogram(layoutCfg);
 
 new viserGraph({
   graph: {

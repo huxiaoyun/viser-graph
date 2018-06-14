@@ -93,3 +93,4 @@ export const registerNode = G6.registerNode;
 export const registerEdge = G6.registerEdge;
 export const registerGuide = G6.registerGuide;
 export const Layouts = G6.Layouts;
+export const Util = G6.Util;

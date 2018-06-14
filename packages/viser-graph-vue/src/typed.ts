@@ -41,3 +41,10 @@ function changeObj(array: any) {
 }
 
 export default changeObj(props);
+export {
+  graphProps,
+  zoomProps,
+  nodePros,
+  edgeProps,
+  eventProps,
+}

@@ -1,25 +1,10 @@
-<template>
-  <div>
-    <v-graph :width="graph.width" :height="graph.width"
-      :fit-view="graph.fitView" :fit-view-padding="graph.fitViewPadding"
-      :animate="graph.animate" :type="graph.type"
-      :layout="graph.layout"
-      :data="graph.data"
-      :on-afterchange="graph.onAfterchange">
-      <v-node :shape="node.shape" :size="node.size" :label="node.label"></v-node>
-      <v-edge :shape="edge.shape" ></v-edge>
-    </v-graph>
-  </div>
-</template>
-
-<script>
+import { Graph, Node, Edge, registerNode, registerEdge, Layouts } from 'viser-graph-react';
+import * as React from 'react';
 import {data} from './data'
-import { registerNode, registerEdge, Layouts } from 'viser-graph-vue';
 
 registerNode('treeNode', {
   anchor: [[0, 0.5], [1, 0.5]]
 });
-
 registerEdge('smooth', {
   getPath: function getPath(item) {
     var points = item.getPoints();
@@ -33,17 +18,16 @@ registerEdge('smooth', {
   }
 });
 
-var layout = new Layouts.CompactBoxTree({
-  // direction: 'LR', // 方向（LR/RL/H/TB/BT/V）
-  getHGap: function getHGap() /* d */ {
-    // 横向间距
-    return 100;
-  },
-  getVGap: function getVGap() /* d */ {
-    // 竖向间距
-    return 10;
-  }
-});
+// 准备布局配置
+var layoutCfg = {
+  "direction": "LR",
+  "nodeSize": 20,
+  "rankSep": 400
+};
+// 自定义树节点
+var DEFAULT_NODE_SIZE = layoutCfg.nodeSize;
+// 生成树图实例
+var layout = new Layouts.Dendrogram(layoutCfg);
 
 const graph = {
   container: 'mount',
@@ -88,17 +72,19 @@ const node = {
 const edge = {
   shape: 'smooth'
 };
-
-export default {
-  data() {
-    return {
-      graph,
-      node,
-      edge,
-    };
-  },
-  methods: {
-
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
   }
-};
-</script>
+
+  render() {
+    return (
+      <div>
+        <Graph {...graph}>
+          <Node {...node}/>
+          <Edge {...edge}/>
+        </Graph>
+      </div>
+    );
+  }
+}

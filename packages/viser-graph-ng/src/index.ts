@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { enableProdMode, NgModule } from '@angular/core';
-import {registerNode, registerEdge, registerGuide, Layouts} from 'viser-graph';
+import {registerNode, registerEdge, registerGuide, Layouts, Util} from '../../viser-graph/src';
 import { Graph, Zoom, Node, Edge } from './components/index';
 
 @NgModule({
@@ -25,5 +25,5 @@ export class ViserGraphModule {
 enableProdMode();
 
 export {
-  registerNode, registerEdge, registerGuide, Layouts
+  registerNode, registerEdge, registerGuide, Layouts, Util
 }

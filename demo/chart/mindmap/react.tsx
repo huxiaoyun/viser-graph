@@ -1,26 +1,13 @@
-<template>
-  <div>
-    <v-graph :width="graph.width" :height="graph.width"
-      :fit-view="graph.fitView" :fit-view-padding="graph.fitViewPadding"
-      :animate="graph.animate" :type="graph.type"
-      :layout="graph.layout"
-      :data="graph.data"
-      :on-afterchange="graph.onAfterchange">
-      <v-node :shape="node.shape" :size="node.size" :label="node.label"></v-node>
-      <v-edge :shape="edge.shape" ></v-edge>
-    </v-graph>
-  </div>
-</template>
-
-<script>
+import { Graph, Node, Edge, registerNode, registerEdge, Layouts } from 'viser-graph-react';
+import * as React from 'react';
 import {data} from './data'
-import { registerNode, registerEdge, Layouts } from 'viser-graph-vue';
 
-registerNode('treeNode', {
+// 注册脑图节点
+registerNode('mindNode', {
   anchor: [[0, 0.5], [1, 0.5]]
 });
-
-registerEdge('smooth', {
+// 注册脑图边
+registerEdge('mindEdge', {
   getPath: function getPath(item) {
     var points = item.getPoints();
     var start = points[0];
@@ -33,8 +20,8 @@ registerEdge('smooth', {
   }
 });
 
-var layout = new Layouts.CompactBoxTree({
-  // direction: 'LR', // 方向（LR/RL/H/TB/BT/V）
+var layout = new Layouts.Mindmap({
+  direction: 'H', // 方向（LR/RL/H/TB/BT/V）
   getHGap: function getHGap() /* d */ {
     // 横向间距
     return 100;
@@ -58,19 +45,23 @@ const graph = {
     roots: [data]
   },
   onAfterchange: function(ev, graph) {
-    console.log('onAfterchange')
     graph.getNodes().forEach(function(node) {
       var model = node.getModel();
       var label = node.getLabel();
       var keyShape = node.getKeyShape();
-      var children = node.getChildren();
       var parent = node.getParent();
       var box = keyShape.getBBox();
       var labelBox = label.getBBox();
       var dx = (box.maxX - box.minX + labelBox.maxX - labelBox.minX) / 2 + 8;
-      var dy = 0;
-      if (children.length != 0) {
-        dx = -dx;
+      var dy = (box.maxY - box.minY) / 2 + 8;
+      if (parent) {
+        var parentModel = parent.getModel();
+        if (parentModel.x > model.x) {
+          dx = -dx;
+        }
+        dy = 0;
+      } else {
+        dx = 0;
       }
       label.translate(dx, dy);
     });
@@ -79,26 +70,34 @@ const graph = {
 };
 
 const node = {
-  shape: 'treeNode',
   size: 8,
-  label: function(obj) {
-    return obj.name;
-  },
-};
-const edge = {
-  shape: 'smooth'
-};
-
-export default {
-  data() {
+  shape: 'mindNode',
+  label: function label(model) {
     return {
-      graph,
-      node,
-      edge,
+      text: model.name,
+      stroke: '#fff',
+      lineWidth: 3
     };
   },
-  methods: {
-
-  }
 };
-</script>
+
+const edge = {
+  shape: 'mindEdge'
+};
+
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div>
+        <Graph {...graph}>
+          <Node {...node}/>
+          <Edge {...edge}/>
+        </Graph>
+      </div>
+    );
+  }
+}

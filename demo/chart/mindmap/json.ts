@@ -1,11 +1,12 @@
 import {viserGraph, registerNode, registerEdge, Layouts} from 'viser-graph';
 import { data } from './data';
 
-registerNode('treeNode', {
+// 注册脑图节点
+registerNode('mindNode', {
   anchor: [[0, 0.5], [1, 0.5]]
 });
-
-registerEdge('smooth', {
+// 注册脑图边
+registerEdge('mindEdge', {
   getPath: function getPath(item) {
     var points = item.getPoints();
     var start = points[0];
@@ -18,8 +19,8 @@ registerEdge('smooth', {
   }
 });
 
-var layout = new Layouts.CompactBoxTree({
-  // direction: 'LR', // 方向（LR/RL/H/TB/BT/V）
+var layout = new Layouts.Mindmap({
+  direction: 'H', // 方向（LR/RL/H/TB/BT/V）
   getHGap: function getHGap() /* d */ {
     // 横向间距
     return 100;
@@ -42,33 +43,41 @@ new viserGraph({
     layout: layout,
   },
   node: {
-    shape: 'treeNode',
     size: 8,
-    label: function(obj) {
-      return obj.name;
+    shape: 'mindNode',
+    label: function label(model) {
+      return {
+        text: model.name,
+        stroke: '#fff',
+        lineWidth: 3
+      };
     },
   },
   edge: {
-    shape: 'smooth'
+    shape: 'mindEdge'
   },
   data: {
     roots: [data]
   },
   events: {
     onAfterchange: function(ev, graph) {
-      console.log('onAfterchange json')
       graph.getNodes().forEach(function(node) {
         var model = node.getModel();
         var label = node.getLabel();
         var keyShape = node.getKeyShape();
-        var children = node.getChildren();
         var parent = node.getParent();
         var box = keyShape.getBBox();
         var labelBox = label.getBBox();
         var dx = (box.maxX - box.minX + labelBox.maxX - labelBox.minX) / 2 + 8;
-        var dy = 0;
-        if (children.length != 0) {
-          dx = -dx;
+        var dy = (box.maxY - box.minY) / 2 + 8;
+        if (parent) {
+          var parentModel = parent.getModel();
+          if (parentModel.x > model.x) {
+            dx = -dx;
+          }
+          dy = 0;
+        } else {
+          dx = 0;
         }
         label.translate(dx, dy);
       });

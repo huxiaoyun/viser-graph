@@ -1,11 +1,32 @@
-import { viserGraph, registerNode, registerEdge, registerGuide, Layouts } from 'viser-graph';
+import { viserGraph, registerNode, registerEdge, registerGuide, Layouts, Util } from '../../viser-graph/src';
 import Vue, { ComponentOptions } from 'vue';
 import typedProps from './typed';
 import {oneObjectMoreArray, cleanUndefined, isAllUndefined, normalizeProps} from './utils';
 
+import {
+  graphProps,
+  zoomProps,
+  nodePros,
+  edgeProps,
+  eventProps
+}from './typed';
+
 const rootCharts = ['v-graph'];
 
-const rootChartProps = ['data', 'width', 'height', 'container', 'fitView', 'fitViewPadding', 'animate', 'type', 'layout'];
+// const rootChartProps = ['data', 'width', 'height', 'container', 'fitView', 'fitViewPadding', 'animate', 'type', 'layout'];
+
+// const eventProps = [
+//   'onMouseDown', 'onMouseMove', 'onMouseLeave', 'onMouseUp', 'onClick', 'onDbClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onPlotEnter', 'onPlotMove', 'onPlotLeave', 'onPlotClick', 'onPlotDbClick',
+//   'onTitleMouseDown', 'onTitleMouseMove', 'onTitleMouseLeave', 'onTitleMouseUp', 'onTitleClick', 'onTitleDbClick', 'onTitleTouchStart', 'onTitleTouchMove', 'onTitleTouchEnd',
+//   'onItemMouseDown', 'onItemMouseMove', 'onItemMouseLeave', 'onItemMouseUp', 'onItemClick', 'onItemDbClick', 'onItemTouchStart', 'onItemTouchMove', 'onItemTouchEnd',
+//   'onMarkerMouseDown', 'onMarkerMouseMove', 'onMarkerMouseLeave', 'onMarkerMouseUp', 'onMarkerClick', 'onMarkerDbClick', 'onMarkerTouchStart', 'onMarkerTouchMove', 'onMarkerTouchEnd',
+//   'onTextMouseDown', 'onTextMouseMove', 'onTextMouseLeave', 'onTextMouseUp', 'onTextClick', 'onTextDbClick', 'onTextTouchStart', 'onTextTouchMove', 'onTextTouchEnd',
+//   'onLabelMouseDown', 'onLabelMouseMove', 'onLabelMouseLeave', 'onLabelMouseUp', 'onLabelClick', 'onLabelDbClick', 'onLabelTouchStart', 'onLabelTouchMove', 'onLabelTouchEnd',
+//   'onTicksMouseDown', 'onTicksMouseMove', 'onTicksMouseLeave', 'onTicksMouseUp', 'onTicksClick', 'onTicksDbClick', 'onTicksTouchStart', 'onTicksTouchMove', 'onTicksTouchEnd',
+//   'onLineMouseDown', 'onLineMouseMove', 'onLineMouseLeave', 'onLineMouseUp', 'onLineClick', 'onLineDbClick', 'onLineTouchStart', 'onLineTouchMove', 'onLineTouchEnd',
+//   'onGridMouseDown', 'onGridMouseMove', 'onGridMouseLeave', 'onGridMouseUp', 'onGridClick', 'onGridDbClick', 'onGridTouchStart', 'onGridTouchMove', 'onGridTouchEnd',
+//   'onAfterchange',
+// ];
 
 const baseChartComponent = {
   data() {
@@ -41,8 +62,9 @@ const baseChartComponent = {
       const d2Json = {
         graph: {
           container: this.$el,
-          ...cleanUndefined(normalizeProps(this._props, rootChartProps)),
+          ...cleanUndefined(normalizeProps(this._props, graphProps)),
         },
+        events: cleanUndefined(normalizeProps(this._props, eventProps)),
         data: this._props.data,
         ...this.jsonForD2,
       };
@@ -67,7 +89,6 @@ const baseChartComponent = {
         if (!nearestRootComponent) {
           throw Error(`${this.$options._componentTag} must be wrapped into v-chart`);
         }
-
         const rechartName = this.$options._componentTag.replace(/-/g, '').slice(1);
         if (isAllUndefined(this._props)) {
           nearestRootComponent.jsonForD2[rechartName] = true;
@@ -114,7 +135,8 @@ export {
   registerNode,
   registerEdge,
   registerGuide,
-  Layouts
+  Layouts,
+  Util
 };
 
 
