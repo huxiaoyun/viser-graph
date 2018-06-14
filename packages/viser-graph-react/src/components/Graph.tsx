@@ -1,6 +1,6 @@
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import {viserGraph} from 'viser-graph';
+import * as React from 'react';
+import { ViserGraph } from '../../../viser-graph/src';
 
 function firstLowerCase(str: string) {
   return str.replace(/^\S/, (s: any) => {
@@ -24,7 +24,6 @@ function retain(obj: any, attr: any) {
   return newObj;
 }
 
-
 function isOwnEmpty(obj: object) {
   for (const name in obj) {
     if (obj.hasOwnProperty(name)) {
@@ -35,29 +34,29 @@ function isOwnEmpty(obj: object) {
 }
 
 export default class Graph extends React.Component<any, any> {
-  static childContextTypes = {
+  public static childContextTypes = {
     centralizedUpdates: PropTypes.func,
   };
 
-  chart: any;
-  container: any;
-  config: any = {};
+  public chart: any;
+  public container: any;
+  public config: any = {};
 
   constructor(props: any) {
     super(props);
     this.config.data = props.data;
   }
 
-  getChildContext() {
+  public getChildContext() {
     return {
       centralizedUpdates: this.centralizedUpdates,
     };
   }
 
-  combineChartConfig(props: any) {
+  public combineChartConfig(props: any) {
     const chartRetain = [
       'height', 'width', 'animate',
-      'fitView', 'fitViewPadding', 'type', 'layout'
+      'fitView', 'fitViewPadding', 'type', 'layout',
     ];
     this.config.graph = retain(props, chartRetain);
 
@@ -73,7 +72,7 @@ export default class Graph extends React.Component<any, any> {
     this.config.events = retain(props, eventRetain);
   }
 
-  combineContentConfig(displayName: string, props: any, config: any) {
+  public combineContentConfig(displayName: string, props: any, config: any) {
     const realName = firstLowerCase(displayName);
     const nameLowerCase = displayName.toLowerCase();
 
@@ -82,7 +81,8 @@ export default class Graph extends React.Component<any, any> {
       'node',
       'edge',
     ];
-    if (regSeries.indexOf(realName) < 0 && isOwnEmpty(props)) {
+    // tslint:disable-next-line:prefer-conditional-expression
+    if (((regSeries.indexOf(realName) < 0) && isOwnEmpty(props))) {
       config[nameLowerCase] = true;
     } else {
       config[nameLowerCase] = props;
@@ -91,15 +91,14 @@ export default class Graph extends React.Component<any, any> {
     return config;
   }
 
-  centralizedUpdates = (unit: any) => {
+  public centralizedUpdates = (unit: any) => {
     const config = this.config;
     const props = unit.props;
     const displayName = unit.displayName;
     this.combineContentConfig(displayName, props, config);
-  };
+  }
 
-
-  createChartInstance() {
+  public createChartInstance() {
     if (this.chart) {
       this.chart.destroy();
     }
@@ -107,39 +106,35 @@ export default class Graph extends React.Component<any, any> {
     this.combineChartConfig(this.props);
 
     this.config.graph.container = this.container;
-    this.chart = new viserGraph(this.config).render();
+    this.chart = new ViserGraph(this.config).render();
   }
 
-  repaintChartInstance() {
+  public repaintChartInstance() {
     this.combineChartConfig(this.props);
 
     if (this.chart) {
       this.chart.repaint(this.config);
     } else {
       this.config.graph.container = this.container;
-      this.chart = new viserGraph(this.config).render();
+      this.chart = new ViserGraph(this.config).render();
     }
   }
 
-  clearConfigData() {
+  public clearConfigData() {
     this.config = {};
   }
 
-  componentDidMount() {
+  public componentDidMount() {
     this.createChartInstance();
     this.clearConfigData();
   }
 
-  componentDidUpdate(props: any) {
+  public componentDidUpdate(props: any) {
     this.repaintChartInstance();
     this.clearConfigData();
   }
 
-  componentWillReceiveProps() {
-
-  }
-
-  componentWillUnmount() {
+  public componentWillUnmount() {
     if (this.chart) {
       this.chart.destroy();
       this.chart = null;
@@ -147,13 +142,13 @@ export default class Graph extends React.Component<any, any> {
     this.container = null;
   }
 
-  portalRef = (container: any) => {
+  public portalRef = (container: any) => {
     if (!this.container) {
       this.container = container;
     }
-  };
+  }
 
-  render() {
+  public render() {
     return <div ref={this.portalRef}>{this.props.children}</div>;
   }
 }

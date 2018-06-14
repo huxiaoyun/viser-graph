@@ -2,21 +2,18 @@
 1 silly flags { _: [ 'exec' ],
 1 silly flags   'reject-cycles': false,
 1 silly flags   rejectCycles: false,
-1 silly flags   scope: 'viser-graph',
+1 silly flags   scope: 'viser-graph-*',
 1 silly flags   command: 'npm',
 1 silly flags   args: [ 'run', 'build' ] }
 2 verbose rootPath /Users/ludy.hxy/Project/g2/g6/github/viser-graph
 3 info version 2.10.1
 4 silly existsSync /Users/ludy.hxy/Project/g2/g6/github/viser-graph/VERSION
-5 info scope viser-graph
-6 error EPACKAGES Errored while collecting packages and package graph
-7 error JSONError: Unexpected token } in JSON at position 1049 while parsing near '...iser-graph": "*",  },  "devDependencie...' in ../packages/viser-graph-ng/package.json
-7 error     at module.exports (/usr/local/lib/node_modules/lerna/node_modules/parse-json/index.js:26:19)
-7 error     at parse (/usr/local/lib/node_modules/lerna/node_modules/load-json-file/index.js:8:29)
-7 error     at Function.module.exports.sync.fp [as sync] (/usr/local/lib/node_modules/lerna/node_modules/load-json-file/index.js:11:29)
-7 error     at Function.module.exports.sync (/usr/local/lib/node_modules/lerna/node_modules/read-pkg/index.js:40:25)
-7 error     at /usr/local/lib/node_modules/lerna/lib/PackageUtilities.js:138:47
-7 error     at Array.forEach (<anonymous>)
-7 error     at /usr/local/lib/node_modules/lerna/lib/PackageUtilities.js:132:86
-7 error     at Array.forEach (<anonymous>)
-7 error     at Function.getPackages (/usr/local/lib/node_modules/lerna/lib/PackageUtilities.js:131:22)
+5 info scope viser-graph-*
+6 silly initialize attempt
+7 silly initialize success
+8 silly execute attempt
+9 error exec Errored while executing 'npm run build' in 'viser-graph-vue'
+10 error execute callback with error
+11 error Error: Command failed: npm run build
+11 error     at Promise.all.then.arr (/usr/local/lib/node_modules/lerna/node_modules/execa/index.js:236:11)
+11 error     at <anonymous>

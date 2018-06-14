@@ -1,4 +1,4 @@
-import {viserGraph, registerNode, registerEdge, Layouts} from 'viser-graph';
+import { ViserGraph, registerNode, registerEdge, Layouts} from '../../../packages/viser-graph/src';
 import { data } from './data';
 
 registerNode('treeNode', {
@@ -28,7 +28,7 @@ var DEFAULT_NODE_SIZE = layoutCfg.nodeSize;
 // 生成树图实例
 var layout = new Layouts.Dendrogram(layoutCfg);
 
-new viserGraph({
+new ViserGraph({
   graph: {
     container: 'mount',
     width: 500,

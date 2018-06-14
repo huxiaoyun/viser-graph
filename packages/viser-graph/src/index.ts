@@ -1,23 +1,22 @@
 import * as G6 from '@antv/g6';
 
-export class viserGraph {
-  config: any;
-  graph: any;
-  constructor (config: any) {
+export class ViserGraph {
+  public config: any;
+  public graph: any;
+  constructor(config: any) {
     this.config = config;
-    console.log(config);
   }
 
-  render() {
+  public render() {
     this.setGraph();
     this.setNode();
     this.setEdge();
     this.setEvent();
 
     this.setData();
-  };
+  }
 
-  setGraph() {
+  public setGraph() {
     if (!this.config.graph.container) {
       console.error('请设置容器');
       return;
@@ -26,18 +25,18 @@ export class viserGraph {
     if (this.config.graph) {
       graphConfig = {
         ...graphConfig,
-        ...this.config.graph
+        ...this.config.graph,
       };
     }
 
     if (this.config.zoom) {
       graphConfig = {
         ...graphConfig,
-        ...this.config.zoom
+        ...this.config.zoom,
       };
     }
 
-    switch(this.config.graph.type) {
+    switch (this.config.graph.type) {
       case 'tree':
         this.graph = new G6.Tree(graphConfig);
         break;
@@ -50,7 +49,7 @@ export class viserGraph {
 
   }
 
-  setData() {
+  public setData() {
     if (!this.config.data) {
       console.error('请设置数据');
       return ;
@@ -58,20 +57,20 @@ export class viserGraph {
     this.graph.read(this.config.data);
   }
 
-  setNode() {
+  public setNode() {
     if (!this.config.node) {
       return;
     }
     delete this.config.node.componentId;
     const nodes = this.graph.node(this.config.node);
     if (this.config.node.label) {
-      nodes.label(function(obj) {
+      nodes.label((obj) => {
         return obj.name;
       });
     }
   }
 
-  setEdge() {
+  public setEdge() {
     if (!this.config.edge) {
       return;
     }
@@ -79,10 +78,10 @@ export class viserGraph {
     this.graph.edge(this.config.edge);
   }
 
-  setEvent() {
+  public setEvent() {
     Object.keys(this.config.events || []).forEach((k) => {
       const eventName = k.replace('on', '').toLocaleLowerCase();
-      this.graph.on(eventName, (ev: any)=>{
+      this.graph.on(eventName, (ev: any) => {
         this.config.events[k](ev, this.graph);
       });
     });

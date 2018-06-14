@@ -7,11 +7,11 @@ export const camelCase: any = (() => {
   return (str: string, delimiters?: string) => {
     return str.replace(
       delimiters ? new RegExp('[' + delimiters + ']+(.)?', 'g') : DEFAULT_REGEX,
-      toUpper
+      toUpper,
     );
   };
 })();
-export const safePush = function(obj: any, key: string, value: any) {
+export const safePush = (obj: any, key: string, value: any) => {
   if (!obj[key]) {
     obj[key] = [];
   }
@@ -19,9 +19,9 @@ export const safePush = function(obj: any, key: string, value: any) {
   cleanUndefined(value);
 
   obj[key].push(value);
-}
+};
 
-export const oneObjectMoreArray = function (obj: any, key: string, value: any) {
+export const oneObjectMoreArray = (obj: any, key: string, value: any) => {
   if (!obj[key]) {
     obj[key] = value;
     return;
@@ -54,9 +54,9 @@ export const oneObjectMoreArray = function (obj: any, key: string, value: any) {
       ...value,
     };
   }
-}
+};
 
-export const cleanUndefined = function (value: any) {
+export const cleanUndefined = (value: any) => {
   const newValue = { ...value };
 
   // delete value's undefined key
@@ -67,22 +67,22 @@ export const cleanUndefined = function (value: any) {
   }
 
   return newValue;
-}
+};
 
-export const isAllUndefined = function (value: any) {
-  return Object.keys(value).every(key => value[key] === undefined);
-}
+export const isAllUndefined = (value: any) => {
+  return Object.keys(value).every((key) => value[key] === undefined);
+};
 
-export const camelize = function (str: string) {
+export const camelize = (str: string) => {
   return str.replace(/(?:^\w|[A-Z]|\b\w)/g, (letter, index) => {
     return index === 0 ? letter.toLowerCase() : letter.toUpperCase();
   }).replace(/\s+/g, '');
-}
+};
 
 /**
  * special props for vue
  */
-export const normalizeProps = function (props: any, include: string[] = [], exclude: string[] = []) {
+export const normalizeProps = (props: any, include: string[] = [], exclude: string[] = []) => {
   const newProps = { ...props };
 
   if (newProps.vStyle) {
@@ -91,22 +91,22 @@ export const normalizeProps = function (props: any, include: string[] = [], excl
   }
 
   if (exclude.length) {
-    exclude.forEach(propsKey => {
+    exclude.forEach((propsKey) => {
       delete newProps[propsKey];
-    })
+    });
   }
 
   if (include.length) {
-    Object.keys(newProps).forEach(propsKey => {
+    Object.keys(newProps).forEach((propsKey) => {
       if (include.indexOf(propsKey) === -1) {
         delete newProps[propsKey];
       }
-    })
+    });
   }
 
   return newProps;
-}
+};
 
-export const generateRandomNum = function () {
+export const generateRandomNum = () => {
   return (Math.floor(new Date().getTime() + Math.random() * 10000)).toString();
-}
+};

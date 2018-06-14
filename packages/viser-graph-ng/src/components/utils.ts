@@ -1,23 +1,23 @@
-export const firstLowerCase = function (str: string) {
+export const firstLowerCase = (str: string) => {
   return str.replace(/^\S/, (s: any) => {
     return s.toLowerCase();
   });
-}
+};
 
-export const generateRandomNum = function () {
+export const generateRandomNum = () => {
   return (Math.floor(new Date().getTime() + Math.random() * 10000)).toString();
-}
+};
 
-export const isOwnEmpty = function (obj: any) {
+export const isOwnEmpty = (obj: any) => {
   for (const name in obj) {
     if (obj.hasOwnProperty(name)) {
       return false;
     }
   }
   return true;
-}
+};
 
-export const retain = function (obj: any, attr: string[]) {
+export const retain = (obj: any, attr: string[]) => {
   const newObj = Object.create(null);
 
   for (const item in obj) {
@@ -31,9 +31,9 @@ export const retain = function (obj: any, attr: string[]) {
   }
 
   return newObj;
-}
+};
 
-export const omit = function (obj: any, attr: string) {
+export const omit = (obj: any, attr: string) => {
   const newObj = Object.create(null);
 
   for (const item in obj) {
@@ -47,9 +47,9 @@ export const omit = function (obj: any, attr: string) {
   }
 
   return newObj;
-}
+};
 
-export const uniqComponentIdArray = function (configs: any[]) {
+export const uniqComponentIdArray = (configs: any[]) => {
   const componentIds: any = {};
   const newConfigs = [] as any;
   for (let i = (configs.length - 1); i >= 0; i--) {
@@ -63,4 +63,4 @@ export const uniqComponentIdArray = function (configs: any[]) {
     return parseInt(ca.componentId, 10) - parseInt(cb.componentId, 10);
   });
   return newConfigs;
-}
+};

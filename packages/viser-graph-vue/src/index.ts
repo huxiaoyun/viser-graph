@@ -1,33 +1,12 @@
-import { viserGraph, registerNode, registerEdge, registerGuide, Layouts, Util } from '../../viser-graph/src';
 import Vue, { ComponentOptions } from 'vue';
-import typedProps from './typed';
-import {oneObjectMoreArray, cleanUndefined, isAllUndefined, normalizeProps} from './utils';
+import { Layouts, registerEdge, registerGuide, registerNode, Util, ViserGraph } from '../../viser-graph/src';
+import {cleanUndefined, isAllUndefined, normalizeProps, oneObjectMoreArray} from './utils';
 
-import {
-  graphProps,
-  zoomProps,
-  nodePros,
-  edgeProps,
-  eventProps
-}from './typed';
+import { eventProps, graphProps, props } from './typed';
 
 const rootCharts = ['v-graph'];
 
-// const rootChartProps = ['data', 'width', 'height', 'container', 'fitView', 'fitViewPadding', 'animate', 'type', 'layout'];
-
-// const eventProps = [
-//   'onMouseDown', 'onMouseMove', 'onMouseLeave', 'onMouseUp', 'onClick', 'onDbClick', 'onTouchStart', 'onTouchMove', 'onTouchEnd', 'onPlotEnter', 'onPlotMove', 'onPlotLeave', 'onPlotClick', 'onPlotDbClick',
-//   'onTitleMouseDown', 'onTitleMouseMove', 'onTitleMouseLeave', 'onTitleMouseUp', 'onTitleClick', 'onTitleDbClick', 'onTitleTouchStart', 'onTitleTouchMove', 'onTitleTouchEnd',
-//   'onItemMouseDown', 'onItemMouseMove', 'onItemMouseLeave', 'onItemMouseUp', 'onItemClick', 'onItemDbClick', 'onItemTouchStart', 'onItemTouchMove', 'onItemTouchEnd',
-//   'onMarkerMouseDown', 'onMarkerMouseMove', 'onMarkerMouseLeave', 'onMarkerMouseUp', 'onMarkerClick', 'onMarkerDbClick', 'onMarkerTouchStart', 'onMarkerTouchMove', 'onMarkerTouchEnd',
-//   'onTextMouseDown', 'onTextMouseMove', 'onTextMouseLeave', 'onTextMouseUp', 'onTextClick', 'onTextDbClick', 'onTextTouchStart', 'onTextTouchMove', 'onTextTouchEnd',
-//   'onLabelMouseDown', 'onLabelMouseMove', 'onLabelMouseLeave', 'onLabelMouseUp', 'onLabelClick', 'onLabelDbClick', 'onLabelTouchStart', 'onLabelTouchMove', 'onLabelTouchEnd',
-//   'onTicksMouseDown', 'onTicksMouseMove', 'onTicksMouseLeave', 'onTicksMouseUp', 'onTicksClick', 'onTicksDbClick', 'onTicksTouchStart', 'onTicksTouchMove', 'onTicksTouchEnd',
-//   'onLineMouseDown', 'onLineMouseMove', 'onLineMouseLeave', 'onLineMouseUp', 'onLineClick', 'onLineDbClick', 'onLineTouchStart', 'onLineTouchMove', 'onLineTouchEnd',
-//   'onGridMouseDown', 'onGridMouseMove', 'onGridMouseLeave', 'onGridMouseUp', 'onGridClick', 'onGridDbClick', 'onGridTouchStart', 'onGridTouchMove', 'onGridTouchEnd',
-//   'onAfterchange',
-// ];
-
+// tslint:disable-next-line:no-object-literal-type-assertion
 const baseChartComponent = {
   data() {
     return {
@@ -35,7 +14,7 @@ const baseChartComponent = {
       jsonForD2: {},
     };
   },
-  props: typedProps as any,
+  props,
   methods: {
     checkIsContainer(componentInstance: Vue) {
       if (
@@ -75,15 +54,11 @@ const baseChartComponent = {
       if (rootCharts.indexOf(this.$options._componentTag) > -1) { // hit top
         const d2Json = this.createRootD2Json();
         if (!isUpdate || !this.chart) {
-          this.chart = new viserGraph(d2Json).render();
+          this.chart = new ViserGraph(d2Json).render();
         } else {
           this.chart.repaint(d2Json);
         }
-      }
-      /**
-       * refresh others like axis, coord, guide, etc.
-       */
-      else {
+      } else {
         const nearestRootComponent = this.findNearestRootComponent(this.$parent);
 
         if (!nearestRootComponent) {
@@ -99,7 +74,7 @@ const baseChartComponent = {
           });
         }
       }
-    }
+    },
   },
   created() { // bubble from parent to child
   },
@@ -114,6 +89,7 @@ const baseChartComponent = {
     if (isContainer) {
       return createElement('div', null, (this as any).$slots.default);
     }
+    // tslint:disable-next-line:no-shadowed-variable
     const props = cleanUndefined(normalizeProps((this as any)._props));
     return createElement('div', { style: { display: 'none' } }, Object.keys(props).map((key) => {
       return '' + key + ':' + JSON.stringify(props[key]);
@@ -136,21 +112,5 @@ export {
   registerEdge,
   registerGuide,
   Layouts,
-  Util
+  Util,
 };
-
-
-declare module 'vue/types/vue' {
-  interface Vue {
-    chart: any;
-    _props?: object;
-    _uid?: string;
-    jsonForD2: any;
-  }
-}
-
-declare module 'vue/types/options' {
-  interface ComponentOptions<V extends Vue> {
-    _componentTag?: any;
-  }
-}

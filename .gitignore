@@ -9,4 +9,9 @@ demo/**/*/umd
 coverage
 npm-debug.log
 *.orig
+packages/**/*/package-lock.json
+demo/**/*/package-lock.json
 package-lock.json
+packages/.DS_Store
+lerna-debug.log
+.DS_Store

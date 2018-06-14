@@ -1,4 +1,4 @@
-import { viserGraph, registerNode } from '../../../packages/viser-graph';
+import { ViserGraph } from '../../../packages/viser-graph/src';
 const data = {
   nodes: [{
     id: 'node1',
@@ -16,7 +16,7 @@ const data = {
   }]
 };
 
-new viserGraph({
+new ViserGraph({
   graph: {
     container: 'mount',
     width: 500,

@@ -7,7 +7,4 @@ export class GraphContext {
   public graph: any;
   public graphDivElement: any;
 
-  constructor() {
-
-  }
 }

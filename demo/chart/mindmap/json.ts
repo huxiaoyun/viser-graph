@@ -1,4 +1,4 @@
-import {viserGraph, registerNode, registerEdge, Layouts} from 'viser-graph';
+import { ViserGraph, registerNode, registerEdge, Layouts} from '../../../packages/viser-graph/src';
 import { data } from './data';
 
 // 注册脑图节点
@@ -31,7 +31,7 @@ var layout = new Layouts.Mindmap({
   }
 });
 
-new viserGraph({
+new ViserGraph({
   graph: {
     container: 'mount',
     width: 500,

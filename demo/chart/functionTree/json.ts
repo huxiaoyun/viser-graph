@@ -1,4 +1,4 @@
-import {viserGraph, registerNode, registerEdge, Layouts, Util} from '../../../packages/viser-graph/src';
+import { ViserGraph, registerNode, registerEdge, Layouts, Util} from '../../../packages/viser-graph/src';
 
 var getTreeData = function getTreeData(x1, y1, angle, depth, nodes, edges) {
   var nodes = nodes && arguments[4] !== undefined ? arguments[4] : [];
@@ -34,7 +34,7 @@ var getTreeData = function getTreeData(x1, y1, angle, depth, nodes, edges) {
 };
 var data = getTreeData(0, 0, -90, 9, null, null);
 
-new viserGraph({
+new ViserGraph({
   graph: {
     container: 'mount',
     width: 500,

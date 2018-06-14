@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input,
   OnChanges, SimpleChanges, ViewChild, ViewContainerRef } from '@angular/core';
-import {viserGraph} from 'viser-graph';
+import { ViserGraph } from '../../../viser-graph/src';
 import { GraphContext } from './GraphService';
 import {generateRandomNum, retain} from './utils';
 
@@ -181,13 +181,13 @@ export class Graph implements AfterViewInit, OnChanges {
           this.context.graph.repaint(this.context.config);
         } else {
           this.context.config.graph.container = this.context.graphDivElement;
-          this.context.graph = new viserGraph(this.context.config).render();
+          this.context.graph = new ViserGraph(this.context.config).render();
         }
       }, 90);
     } else if (!this.context.graph && name === 'Graph') {
       this.context.config.graph.container = this.graphDiv.nativeElement;
       this.context.graphDivElement = this.graphDiv.nativeElement;
-      this.context.graph = new viserGraph(this.context.config).render();
+      this.context.graph = new ViserGraph(this.context.config).render();
     }
   }
 }
